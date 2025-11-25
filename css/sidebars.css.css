@@ -1,0 +1,131 @@
+/* --- SIDEBAR CONTAINER --- */
+.sidebar-wrapper {
+  background-color: #ffffff;
+  border-right: 1px solid #f0f0f0;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.02);
+  min-height: 100vh;
+  z-index: 100;
+}
+
+/* Logo Area Spacing */
+.logo-container {
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin-bottom: 15px;
+}
+
+/* ---------------------------------------------------
+   MAIN CATEGORY BUTTONS (Toggle Triggers)
+----------------------------------------------------- */
+.btn-toggle {
+  width: 100%;
+  text-align: left;
+  padding: 12px 15px;
+  
+  /* TYPOGRAPHY SETTINGS */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333333;
+  
+  background-color: transparent;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+/* Hover State */
+.btn-toggle:hover {
+  background-color: #fef0e6 !important; /* Light Persimmon Tint */
+  color: #CD6839 !important; /* Persimmon */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+}
+
+/* Focus State (When clicked or tabbed to) */
+.btn-toggle:focus {
+  background-color: #fef0e6; /* Ensure it doesn't go white on focus */
+  color: #CD6839;
+  box-shadow: 0 0 0 3px rgba(205, 104, 57, 0.15);
+  outline: none;
+}
+
+/* Active/Pressed State (The moment you click) */
+.btn-toggle:active {
+  background-color: #fae3d9 !important; /* Slightly darker when pressing */
+  color: #9D3809 !important; /* Rust Color */
+}
+
+/* Expanded State (The "Open" menu parent) */
+/* We use !important here to override Bootstrap's default .btn:active styles */
+.btn-toggle[aria-expanded="true"] {
+  color: #CD6839 !important; /* Persimmon */
+  background-color: #fae3d9 !important; /* Visible Light Orange/Pink Tint */
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------
+   CHEVRON ARROW ANIMATION
+----------------------------------------------------- */
+.btn-toggle::before {
+  display: none !important;
+}
+
+.btn-toggle::after {
+  content: '\f078'; /* FontAwesome Chevron */
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.75rem;
+  color: #adb5bd;
+  transition: transform 0.3s ease;
+}
+
+.btn-toggle[aria-expanded="true"]::after {
+  transform: rotate(180deg);
+  color: #CD6839 !important; 
+}
+
+/* ---------------------------------------------------
+   SUB-MENU LINKS (The actual pages)
+----------------------------------------------------- */
+.btn-toggle-nav {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+.btn-toggle-nav li {
+  margin-bottom: 2px;
+}
+
+.btn-toggle-nav a {
+  display: block;
+  padding: 8px 15px 8px 32px; /* Indented */
+  text-decoration: none !important;
+  
+  /* TYPOGRAPHY SETTINGS */
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400; 
+  font-size: 0.95rem; 
+  color: #333333;
+  
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+/* Hover Effect */
+.btn-toggle-nav a:hover {
+  background-color: #fff8e1 !important; /* Light Gold Tint */
+  color: #7E5202 !important; /* Deep Oak */
+  padding-left: 38px; /* Slide animation */
+}
+
+/* Active Link State */
+.btn-toggle-nav a.active-link {
+  background-color: #CD6839 !important; /* Persimmon */
+  color: #ffffff !important; /* FORCE WHITE TEXT */
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(205, 104, 57, 0.2);
+}

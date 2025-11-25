@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navbar - Sanketh's Design System</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    xintegrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <!-- Custom Styles -->
+  <link href="../css/sidebars.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600&family=Roboto:wght@400;500;700&family=Sacramento&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  
+  <style>
+    /* Styling for the documentation page itself */
+    .example-container {
+      border: 1px solid #e0e0e0;
+      padding: 0;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      background-color: #f8f9fa;
+    }
+    
+    .code-block {
+      background-color: #2d2d2d;
+      color: #f8f8f2;
+      padding: 1.5rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.85rem;
+    }
+
+    /* Usage list styling */
+    .usage-list li {
+      margin-bottom: 0.5rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="d-flex flex-nowrap">
+    
+    <!-- SIDEBAR -->
+    <div class="sidebar-wrapper flex-shrink-0 p-3 bg-white" style="width: 240px; min-height: 100vh;">
+      <div class="logo-container text-center mb-4 pt-2">
+        <a href="../index.html" class="d-flex align-items-center justify-content-center text-decoration-none">
+           <img src="../images/logo.png" alt="Sanketh Logo" style="max-width: 150px; height: auto;">
+        </a>
+      </div>
+      
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            data-bs-toggle="collapse" data-bs-target="#foundations-collapse" aria-expanded="false">
+            Foundations
+          </button>
+          <div class="collapse" id="foundations-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="../foundation/type.html" class="rounded">Typography</a></li>
+              <li><a href="../foundation/color.html" class="rounded">Color</a></li>
+              <li><a href="../foundation/logo.html" class="rounded">Logo</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <!-- COMPONENTS (OPEN & ACTIVE) -->
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0"
+            data-bs-toggle="collapse" data-bs-target="#components-collapse" aria-expanded="true">
+            Components
+          </button>
+          <div class="collapse show" id="components-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <!-- Navbar is Active -->
+              <li><a href="navbar.html" class="rounded active-link">Navbar</a></li>
+              <li><a href="footer.html" class="rounded">Footer</a></li>
+              <li><a href="card.html" class="rounded">Card</a></li>
+            </ul>
+          </div>
+        </li>
+        
+        <li class="mb-1">
+          <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+            data-bs-toggle="collapse" data-bs-target="#patterns-collapse" aria-expanded="false">
+            Page Patterns
+          </button>
+          <div class="collapse" id="patterns-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li><a href="../patterns/home-pattern.html" class="rounded">Homepage</a></li>
+              <li><a href="../patterns/project-pattern.html" class="rounded">Project</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="container-fluid overflow-auto" style="background-color: #f8f9fa;">
+      <div class="row p-5">
+        
+        <!-- Page Header -->
+        <div class="col-12 mb-4">
+          <h1 class="display-5" style="font-family: 'Roboto'; font-weight: 700;">Navigation Bar</h1>
+          <p class="lead text-muted">The navigation bar allows users to navigate through the website. It features the brand logo and key links.</p>
+          <hr class="my-4">
+        </div>
+
+        <!-- EXAMPLE SECTION -->
+        <div class="col-12 mb-4">
+          <h3 class="mb-3">Example</h3>
+          
+          <!-- The Container for the Preview -->
+          <div class="example-container">
+            <!-- Ensure you save your image as 'navbar-screenshot.png' in the images folder -->
+            <img src="../images/navbar-screenshot.png" alt="Navbar Design Screenshot" class="img-fluid w-100" style="display: block;">
+          </div>
+        </div>
+
+        <!-- CODE SECTION -->
+        <div class="col-12 mb-5">
+          <h3 class="mb-3">Code</h3>
+          <p class="text-muted mb-3">Copy and paste the following code to implement the navigation bar.</p>
+          
+          <div class="code-block">
+<pre>&lt;nav class="navbar navbar-expand-lg" style="background-color: var(--brand-primary);"&gt;
+  &lt;div class="container-fluid"&gt;
+    
+    &lt;!-- Brand --&gt;
+    &lt;a class="navbar-brand d-flex align-items-center" href="#"&gt;
+      &lt;img src="images/logo-icon.png" alt="Logo" height="40"&gt;
+      &lt;span class="ms-2 text-white fs-2" style="font-family: 'Sacramento', cursive;"&gt;Sanketh&lt;/span&gt;
+    &lt;/a&gt;
+
+    &lt;!-- Mobile Toggler --&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;!-- Links --&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav ms-auto"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link text-white-50" href="#"&gt;Home&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link text-white fw-bold" href="#"&gt;Cards&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link text-white-50" href="#"&gt;Carousel&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/nav&gt;</pre>
+          </div>
+        </div>
+
+        <!-- USAGE SECTION -->
+        <div class="col-12 mb-4">
+          <h3 class="mb-3">Usage</h3>
+          <ul class="usage-list">
+            <li>The navigation bar must be included on all pages.</li>
+            <li>The navigation items should remain constant across all pages.</li>
+            <li>The navigation bar must stay at the top of the viewport.</li>
+            <li>The navigation logo must be linked to the homepage.</li>
+          </ul>
+        </div>
+
+        <!-- ACCESSIBILITY SECTION -->
+        <div class="col-12 mb-5">
+          <h3 class="mb-3">Accessibility Considerations</h3>
+          <p>
+            This primary horizontal navigation bar uses dark text against light backgrounds to meet the WCAG color contrast requirement. If using any of the darker backgrounds (surface-brand-primary, surface-brand-secondary, surface-secondary), use one of the lighter text colors (text-brand-primary-light, text-brand-secondary-light, text-inverse).
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    xintegrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+</body>
+</html>
